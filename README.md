@@ -1,4 +1,15 @@
-## Setup
+## Type Safe GraphQL with Vue 3
+
+This is an article walking through constructing a stack to do type safe GraphQL with Vue 3. It uses:
+
+- [urql](https://formidable.com/open-source/urql/) (and `@urql/vue`)
+- [nexus-graphql](https://nexusjs.org/) library for generating GraphQL schema using TypeScript objects
+- [nexus-decorators](https://github.com/graphql-nexus/nexus-decorators) experimental decorator syntax for use with `nexus-graphql`
+- [graphql-code-generator](https://www.graphql-code-generator.com/) generate TypeScript types from `gql` queries
+
+It's a lot of moving parts. We will create a non type safe app with Vue 3 and urql, then make it type safe starting from the back-end and work our way to the front-end.
+
+## Getting Started
 
 Create a new Vue 3 project with:
 
