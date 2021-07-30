@@ -367,12 +367,13 @@ import "./schema";
 
 Better yet, make it a script in `package.json`:
 
-```
+```json
 {
   "scripts": {
     "build-schema": "ts-node --transpile-only graphql/schema.ts"
   }
 }
+```
 
 Now just run `yarn build-schema`. The `GRAPHQL_CODEGEN` will be useful later when starting the server.
 
