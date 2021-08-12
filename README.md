@@ -102,7 +102,7 @@ app.listen(4000, () => {
 
 Quite a bit going on here. We introduce `input`, `type`, `Query` and `Mutation`. We use a singleton to maintain state. Notice a problem - we have duplicate types, in the GraphQL schema and in the `addBook` function. Not ideal... two sources of truth. More on this later.
 
-Start the server with `yarn ts-node graphql/server.ts`. You will need to restart every time you change it, or you could use `ts-node-dev`. Anyway, what this is doing is declaring a basic schema - I'll be storing all my data under `app`.
+Grab the `tsonfig.json` from this repository, or configure it yourself, then start the server with `yarn ts-node graphql/server.ts`. You will need to restart every time you change it, or you could use `ts-node-dev`. Anyway, what this is doing is declaring a basic schema - I'll be storing all my data under `app`.
 
 If you go to `http://localhost:4000` you can query it. You can also add a new book with a mutation:
 
