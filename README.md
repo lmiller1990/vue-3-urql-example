@@ -348,7 +348,7 @@ import { makeSchema } from "nexus";
 export const graphqlSchema = makeSchema({
   types: [],
   shouldGenerateArtifacts: true,
-  shouldExitAfterGenerateArtifacts: true,
+  shouldExitAfterGenerateArtifacts: Boolean(process.env.GRAPHQL_CODEGEN),
   outputs: {
     typegen: path.join(__dirname, "gen/nxs.gen.ts"),
     schema: path.join(__dirname, "schema.graphql"),
