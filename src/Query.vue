@@ -9,7 +9,7 @@
 
   <div v-else>
     <ul v-if="data">
-      <li v-for="book of data.app.books">{{ book.title }}</li>
+      <Book v-for="book of data.app.books" :book="book" />
     </ul>
   </div>
 </template>
@@ -18,18 +18,22 @@
 import { defineComponent } from 'vue'
 import { useQuery, gql } from '@urql/vue'
 import { GetBooksDocument } from './generated/graphql';
+import Book from './Book.vue'
 
 gql`
   query GetBooks {
     app {
       books {
-        title
+        ...BookDetails
       }
     }
   }
 `
 
 export default defineComponent({
+  components: {
+    Book
+  },
   setup() {
     const result = useQuery({
       query: GetBooksDocument
